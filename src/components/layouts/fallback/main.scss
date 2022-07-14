@@ -1,0 +1,15 @@
+.gui-fallback-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F8FA;
+    width: 100%;
+    min-height: 100vh;
+
+    span {
+        font-size: 2rem;
+        animation: fade 1s linear 0s infinite;
+        padding-right: 1rem;
+      }
+    
+}

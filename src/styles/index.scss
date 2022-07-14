@@ -4,12 +4,16 @@
 
 
 // components
+@import "../components/layouts/main/main.scss";
+@import "../components/layouts/main/header/main.scss";
+@import "../components/layouts/fallback/main.scss";
+@import "../components/ui-kit/spinner/main.scss";
 @import "../components/ui-kit/avatar/main.scss";
 @import "../components/ui-kit/button/main.scss";
 @import "../components/ui-kit/input-text/main.scss";
 
-// pages
-@import "../pages/error-fallback/main.scss";
+// pages and errors
+@import "../application/error-boundary/fallback/main.scss";
 @import "../pages/not-found/main.scss";
 @import "../pages//search/main.scss";
 @import "../pages/profile/main.scss";

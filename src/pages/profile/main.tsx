@@ -34,7 +34,7 @@ export const Profile = () => {
                     <UIKIT.Avatar className="avatar" image={profile?.avatar_url} />
                 </div>
                 <div>
-                    {loading ? <Skeleton width="30vw" count={3} /> : (
+                    {loading ? <Skeleton width="10vw" count={3} /> : (
                         <h1>
                             <div className="title">{profile.name}</div>
                             <div className="subtitle">{profile.login}</div>

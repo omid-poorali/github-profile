@@ -1,1 +1,1 @@
-export * from "./main";
+export { NotFound as default } from "./main";

@@ -1,1 +1,1 @@
-export * from './main';
+export { Profile as default } from "./main";
