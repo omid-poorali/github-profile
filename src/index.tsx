@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-loading-skeleton/dist/skeleton.css'
 import { ToastContainer } from 'react-toastify';
 import { Application } from './application';
 import reportWebVitals from './reportWebVitals';
