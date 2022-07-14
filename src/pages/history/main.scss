@@ -1,0 +1,30 @@
+.gui-history {
+    .list {
+        padding: var(--content-padding);
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to('medium') {
+            width: 50%;
+        }
+    }
+
+    .list-item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        padding: var(--content-padding);
+        border-bottom: 1px solid var(--gray-50);
+
+        &:hover {
+            background-color: var(--gray-50);
+        }
+
+        .name {
+            font-size: var(--text-size-small);
+            font-weight: bold;
+        }
+    }
+}

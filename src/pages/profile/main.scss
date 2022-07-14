@@ -1,0 +1,61 @@
+.gui-profile {
+    padding: var(--content-padding);
+    min-height: 100vh;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include respond-to('medium') {
+            flex-direction: row;
+        }
+
+        >div {
+            padding: var(--content-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            .avatar {
+                width: 10rem;
+                height: 10rem;
+            }
+
+            .title {
+                font-size: var(--text-size-medium);
+            }
+
+            .subtitle {
+                font-size: var(--text-size-small);
+            }
+        }
+    }
+
+    .repos {
+        .list {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+            @include respond-to('medium') {
+                width: 50%;
+            }
+        }
+
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            padding: var(--content-padding);
+            border-bottom: 1px solid var(--gray-50);
+
+            .name {
+                font-size: var(--text-size-small);
+                font-weight: bold;
+            }
+        }
+    }
+}

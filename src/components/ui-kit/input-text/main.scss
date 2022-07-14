@@ -1,0 +1,28 @@
+.gui-input-text {
+  border-radius: var(--input-border-radius);
+  background-color: #fff;
+  width: 100%;
+
+  input {
+    padding: .5rem;
+    background: none;
+    border-style: none;
+    outline: none;
+
+    &:-internal-autofill-selected {
+      border-radius: var(--input-border-radius);
+      background-color: #fff;
+    }
+  }
+
+  &-error {
+    padding: .1rem;
+    color: var(--red-900);
+    font-size: var(--text-size-medium);
+    .placeholder {
+      user-select: none;
+      color:transparent
+    }
+  }
+
+}

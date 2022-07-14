@@ -1,0 +1,1 @@
+export const history = "history-db";
