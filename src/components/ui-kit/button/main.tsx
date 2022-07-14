@@ -5,7 +5,7 @@ import classnames from "classnames";
 type PropsType = {
     className?: string;
     label?: string;
-    variant?: "primary";
+    color?: "primary" | "secondary";
     size?: "small" | "medium" | "large";
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     disabled?: boolean;
@@ -17,15 +17,14 @@ export const Button = React.forwardRef((props: PropsType, forwardedRef: React.Re
 
     const {
         className,
-        variant = "primary",
-        onClick = () => console.log("No click handler specified"),
+        color = "primary",
         label = "",
         disabled = false,
         size = "medium",
         ...rest
     } = props;
 
-    const buttonClassName = classnames("gui-button", `gui-button--${variant}`, `gui-button--${size}`, {
+    const buttonClassName = classnames("gui-button", `gui-button--${color}`, `gui-button--${size}`, {
         "gui-button--disabled": disabled
     }, className);
 
@@ -33,7 +32,6 @@ export const Button = React.forwardRef((props: PropsType, forwardedRef: React.Re
         <button
             ref={forwardedRef}
             className={buttonClassName}
-            onClick={event => onClick(event)}
             disabled={disabled}
             {...rest}
         >
