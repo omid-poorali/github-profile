@@ -1,4 +1,4 @@
-.gui-error-fallback {
+.error-fallback {
   min-height: 600px;
   margin: 0px auto;
   width: auto;
@@ -8,7 +8,7 @@
   justify-content: center;
   flex-direction: column;
 
-  &-gui-error-fallback-title {
+  &-error-fallback-title {
     max-width: 529px;
     font-family: Roboto;
     font-size: 38px;
@@ -22,7 +22,7 @@
     margin-bottom: 16px;
   }
 
-  &-gui-error-fallback-subtitle {
+  &-error-fallback-subtitle {
     max-width: 568px;
     font-family: Roboto;
     font-size: 16px;
@@ -40,49 +40,49 @@
     margin-bottom: 16px;
   }
 
-  &-gui-error-fallback-pao-atras {
+  &-error-fallback-pao-atras {
     animation: leftright 1s alternate infinite;
     transform-origin: center;
   }
 
-  &-gui-error-fallback-pao-frente {
+  &-error-fallback-pao-frente {
     animation: leftright 1s 0.3s alternate infinite;
     transform-origin: center;
   }
 
-  &-gui-error-fallback-olho-esq {
+  &-error-fallback-olho-esq {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-gui-error-fallback-olho-dir {
+  &-error-fallback-olho-dir {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-gui-error-fallback-boca {
+  &-error-fallback-boca {
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-gui-error-fallback-raios {
+  &-error-fallback-raios {
     -webkit-animation: flicker-4 4s linear infinite both;
     animation: flicker-4 4s linear infinite both;
   }
 
-  &-gui-error-fallback-tomada {
+  &-error-fallback-tomada {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  &-gui-error-fallback-fio-500 {
+  &-error-fallback-fio-500 {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  &-gui-error-fallback-fio {
+  &-error-fallback-fio {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }

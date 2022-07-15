@@ -1,7 +1,7 @@
 import { Link, useNavigate, generatePath } from "react-router-dom";
 import { useFormik } from "formik";
 import { UIKIT } from "components";
-import getIndexedDB from "helpers/idb";
+import IndexedDB from "helpers/idb";
 import Logo from "assets/logo.svg";
 import * as Model from "models";
 import * as Names from "names";
@@ -36,16 +36,22 @@ export const Search = () => {
   });
 
   const addToHistory = async (history: Model.History) => {
-    const indexedDB = getIndexedDB(Names.DBs.history, [Names.Stores.searchedTerms]);
+    const indexedDB = IndexedDB(Names.DBs.history, [Names.Stores.searchedTerms]);
     await indexedDB.putValue(Names.Stores.searchedTerms, history);
   }
 
+  const classes = {
+    root: "search-page",
+    container: "search-page-container",
+    form: "search-page-form",
+    button: "search-page-button"
+  }
 
   return (
-    <div className="search-page">
-      <div className="search-page-container">
+    <div className={classes.root}>
+      <div className={classes.container}>
         <img src={Logo} alt="logo" />
-        <form onSubmit={formContext.handleSubmit} className="search-page-form">
+        <form onSubmit={formContext.handleSubmit} className={classes.form}>
           <UIKIT.InputText
             name="term"
             placeholder="Search for a user"
@@ -55,7 +61,7 @@ export const Search = () => {
             errorMessage={formContext.errors.term}
           />
           <div>
-            <UIKIT.Button type="submit" className="search-page-button" size="medium" label="search" />
+            <UIKIT.Button type="submit" className={classes.button} size="medium" label="search" />
           </div>
         </form>
         <Link to={Routes.Users.PROFILE_HISTORY}>History</Link>

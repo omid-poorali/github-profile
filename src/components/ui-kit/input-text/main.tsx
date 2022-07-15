@@ -37,13 +37,19 @@ export const InputText = React.forwardRef((props: PropsType, forwardedRef: React
         innerRef.current?.focus();
     }
 
+    const classes = {
+        root: inputTextClassName,
+        wrapper: "gui-input-text-input-wrapper",
+        error: "gui-input-text-error",
+    }
+
     return (
-        <div data-testid="input-text-root" className={inputTextClassName}>
+        <div data-testid="input-text-root" className={classes.root}>
             <div
                 data-testid="input-wrapper"
                 onClick={handleClick}
                 style={style}
-                className="gui-input-text-input-wrapper">
+                className={classes.wrapper}>
                 <input
                     ref={combinedRef}
                     disabled={disabled}
@@ -51,7 +57,7 @@ export const InputText = React.forwardRef((props: PropsType, forwardedRef: React
                     type="text"
                 />
             </div>
-            <div className="gui-input-text-error">
+            <div className={classes.error}>
                 {props.errorMessage ? `${props.errorMessage}` : <span>placeholder</span>}
             </div>
         </div>

@@ -2,7 +2,7 @@ import { IDBPDatabase, openDB } from 'idb';
 
 let database: IDBPDatabase;
 
-function getIndexedDB(dbName: string, tableNames: string[]) {
+function IndexedDB(dbName: string, tableNames: string[]) {
 
     const connectDB = async () => {
 
@@ -85,4 +85,4 @@ function getIndexedDB(dbName: string, tableNames: string[]) {
     }
 }
 
-export default getIndexedDB;
+export default IndexedDB;

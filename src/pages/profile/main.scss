@@ -14,7 +14,6 @@
 
         >div {
             padding: 1rem;
-            ;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -27,12 +26,13 @@
         height: 10rem;
     }
 
-    &-info-title {
-        font-size: var(--text-size-medium);
+    &-info-name {
+        color: var(--color-primary);
+        font-size: var(--text-size-large);
     }
 
-    &-info-subtitle {
-        font-size: var(--text-size-small);
+    &-info-username {
+        font-size: var(--text-size-medium);
     }
 
     &-repos-list {
@@ -40,6 +40,11 @@
         margin: auto;
         display: flex;
         flex-direction: column;
+
+        h2 {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-primary);
+        }
 
         @include respond-to('medium') {
             width: 50%;
@@ -55,7 +60,12 @@
     }
 
     &-repos-list-item-name {
-        font-size: var(--text-size-small);
-        font-weight: bold;
+        font-size: var(--text-size-large);
+        font-weight: medium;
+    }
+
+    &-repos-list-item-description {
+        font-size: var(--text-size-medium);
+        font-weight: normal;
     }
 }
