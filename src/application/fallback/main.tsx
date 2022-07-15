@@ -1,10 +1,10 @@
-import { Layouts, UIKIT } from "components";
+import { UIKIT } from "components";
 
 export const FallBack = () => {
     return (
-        <Layouts.FallBack>
+        <div className="gui-suspense-fallback">
             <span>Loading...</span>
             <UIKIT.Spinner />
-        </Layouts.FallBack>
+        </div>
     )
 }

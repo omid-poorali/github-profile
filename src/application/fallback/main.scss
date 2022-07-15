@@ -1,4 +1,4 @@
-.gui-fallback-layout {
+.gui-suspense-fallback {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,6 @@
         font-size: 2rem;
         animation: fade 1s linear 0s infinite;
         padding-right: 1rem;
-      }
-    
+    }
+
 }
