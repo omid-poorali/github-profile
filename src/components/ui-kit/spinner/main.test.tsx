@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
 import { Spinner } from "./main";
 
-describe("spinner component tests", () => {
+describe("Spinner component tests", () => {
     it("should not render child elements", () => {
         const testMessage = 'Test Message';
         render(<Spinner>{testMessage}</Spinner>)

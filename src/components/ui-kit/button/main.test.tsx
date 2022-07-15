@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import UserEvent from "@testing-library/user-event";
 import { Button } from "./main";
 
-describe("button component tests", () => {
+describe("Button component tests", () => {
     it("should not render child elements", () => {
         const testMessage = 'Test Message';
         render(<Button>{testMessage}</Button>)
@@ -26,7 +26,7 @@ describe("button component tests", () => {
         expect(screen.getByRole("button").classList.contains("gui-button--disabled")).toBe(true)
     });
 
-    it("should have primary color, small size and circle shape", () => {
+    it("should have primary color, small size", () => {
         const size = 'small';
         const color = 'primary';
         render(<Button data-testid="button" size={size} color={color} />)
@@ -34,7 +34,7 @@ describe("button component tests", () => {
         expect(screen.getByTestId("button").classList.contains(`gui-button--${color}`)).toBe(true);
     });
 
-    it("should have primary color, medium size and circle shape", () => {
+    it("should have primary color, medium size", () => {
         const size = 'medium';
         const color = 'primary';
         render(<Button data-testid="button" size={size} color={color} />)
@@ -42,7 +42,7 @@ describe("button component tests", () => {
         expect(screen.getByTestId("button").classList.contains(`gui-button--${color}`)).toBe(true);
     });
 
-    it("should have secondary color, medium size and circle shape", () => {
+    it("should have secondary color, medium size", () => {
         const size = 'medium';
         const color = 'secondary';
         render(<Button data-testid="button" size={size} color={color} />)
@@ -50,7 +50,7 @@ describe("button component tests", () => {
         expect(screen.getByTestId("button").classList.contains(`gui-button--${color}`)).toBe(true);
     });
 
-    it("should have secondary color, large size and circle shape", () => {
+    it("should have secondary color, large size", () => {
         const size = 'large';
         const color = 'secondary';
         render(<Button data-testid="button" size={size} color={color} />)
