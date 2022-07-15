@@ -1,6 +1,6 @@
 .gui-input-text {
 
-  .input-wrapper {
+  &-input-wrapper {
     border-radius: var(--input-border-radius);
     background-color: #fff;
     width: 100%;
@@ -18,7 +18,7 @@
     }
   }
 
-  .error {
+  &-error {
     padding: .1rem;
     color: var(--red-900);
     font-size: var(--text-size-medium);

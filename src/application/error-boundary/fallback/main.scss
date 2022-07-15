@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 .gui-error-fallback {
   min-height: 600px;
   margin: 0px auto;
@@ -10,7 +8,7 @@
   justify-content: center;
   flex-direction: column;
 
-  .title {
+  &-gui-error-fallback-title {
     max-width: 529px;
     font-family: Roboto;
     font-size: 38px;
@@ -24,7 +22,7 @@
     margin-bottom: 16px;
   }
 
-  .subtitle {
+  &-gui-error-fallback-subtitle {
     max-width: 568px;
     font-family: Roboto;
     font-size: 16px;
@@ -42,49 +40,49 @@
     margin-bottom: 16px;
   }
 
-  .pao-atras {
+  &-gui-error-fallback-pao-atras {
     animation: leftright 1s alternate infinite;
     transform-origin: center;
   }
 
-  .pao-frente {
+  &-gui-error-fallback-pao-frente {
     animation: leftright 1s 0.3s alternate infinite;
     transform-origin: center;
   }
 
-  .olho-esq {
+  &-gui-error-fallback-olho-esq {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  .olho-dir {
+  &-gui-error-fallback-olho-dir {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  .boca {
+  &-gui-error-fallback-boca {
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  .raios {
+  &-gui-error-fallback-raios {
     -webkit-animation: flicker-4 4s linear infinite both;
     animation: flicker-4 4s linear infinite both;
   }
 
-  .tomada {
+  &-gui-error-fallback-tomada {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  .fio-500 {
+  &-gui-error-fallback-fio-500 {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  .fio {
+  &-gui-error-fallback-fio {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }

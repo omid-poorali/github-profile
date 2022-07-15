@@ -28,29 +28,29 @@ export const Profile = () => {
     }, [params.username]);
 
     return (
-        <div className="gui-profile">
-            <div className="info">
+        <div className="profile-page">
+            <div className="profile-page-info">
                 <div>
-                    <UIKIT.Avatar className="avatar" image={profile?.avatar_url} />
+                    <UIKIT.Avatar className="profile-page-info-avatar" image={profile?.avatar_url} />
                 </div>
                 <div>
                     {loading ? <Skeleton width="10vw" count={3} /> : (
                         <h1>
-                            <div className="title">{profile?.name}</div>
-                            <div className="subtitle">{profile?.login}</div>
+                            <div className="profile-page-info-title">{profile?.name}</div>
+                            <div className="profile-page-info-subtitle">{profile?.login}</div>
                         </h1>
                     )}
                 </div>
             </div>
-            <div className="repos">
-                <div className="list">
-                    {loading ? <Skeleton className="list-item" count={3} /> : (
+            <div>
+                <div className="profile-page-repos-list">
+                    {loading ? <Skeleton className="profile-page-repos-list-item" count={3} /> : (
                         <>
                             {React.Children.toArray(repositories.map((repository: Models.Repository) => {
                                 return (
-                                    <div className="list-item">
-                                        <div className="name">{repository.name}</div>
-                                        <div className="description">{repository.description}</div>
+                                    <div className="profile-page-repos-list-item">
+                                        <div className="profile-page-repos-name">{repository.name}</div>
+                                        <div className="profile-page-repos-description">{repository.description}</div>
                                     </div>
                                 )
                             }))}

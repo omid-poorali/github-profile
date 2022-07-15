@@ -43,7 +43,7 @@ export const InputText = React.forwardRef((props: PropsType, forwardedRef: React
                 data-testid="input-wrapper"
                 onClick={handleClick}
                 style={style}
-                className="input-wrapper">
+                className="gui-input-text-input-wrapper">
                 <input
                     ref={combinedRef}
                     disabled={disabled}
@@ -51,7 +51,7 @@ export const InputText = React.forwardRef((props: PropsType, forwardedRef: React
                     type="text"
                 />
             </div>
-            <div className="error">
+            <div className="gui-input-text-error">
                 {props.errorMessage ? `${props.errorMessage}` : <span>placeholder</span>}
             </div>
         </div>

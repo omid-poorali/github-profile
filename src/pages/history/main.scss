@@ -1,6 +1,7 @@
-.gui-history {
-    .list {
-        padding: var(--content-padding);
+.history-page {
+    &-list {
+        padding: 1rem;
+        ;
         width: 100%;
         margin: auto;
         display: flex;
@@ -11,20 +12,17 @@
         }
     }
 
-    .list-item {
+    &-list-item {
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        padding: var(--content-padding);
+        padding: 1rem;
+        ;
         border-bottom: 1px solid var(--gray-50);
 
         &:hover {
             background-color: var(--gray-50);
         }
-
-        .name {
-            font-size: var(--text-size-small);
-            font-weight: bold;
-        }
     }
+
 }

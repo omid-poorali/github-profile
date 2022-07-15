@@ -1,8 +1,8 @@
-.gui-profile {
-    padding: var(--content-padding);
+.profile-page {
+    padding: 1rem;
     min-height: 100%;
 
-    .info {
+    &-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,49 +13,49 @@
         }
 
         >div {
-            padding: var(--content-padding);
+            padding: 1rem;
+            ;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-
-            .avatar {
-                width: 10rem;
-                height: 10rem;
-            }
-
-            .title {
-                font-size: var(--text-size-medium);
-            }
-
-            .subtitle {
-                font-size: var(--text-size-small);
-            }
         }
     }
 
-    .repos {
-        .list {
-            width: 100%;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
+    &-info-avatar {
+        width: 10rem;
+        height: 10rem;
+    }
 
-            @include respond-to('medium') {
-                width: 50%;
-            }
+    &-info-title {
+        font-size: var(--text-size-medium);
+    }
+
+    &-info-subtitle {
+        font-size: var(--text-size-small);
+    }
+
+    &-repos-list {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to('medium') {
+            width: 50%;
         }
+    }
 
-        .list-item {
-            display: flex;
-            flex-direction: column;
-            padding: var(--content-padding);
-            border-bottom: 1px solid var(--gray-50);
+    &-repos-list-item {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        ;
+        border-bottom: 1px solid var(--gray-50);
+    }
 
-            .name {
-                font-size: var(--text-size-small);
-                font-weight: bold;
-            }
-        }
+    &-repos-list-item-name {
+        font-size: var(--text-size-small);
+        font-weight: bold;
     }
 }

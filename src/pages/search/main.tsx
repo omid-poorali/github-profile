@@ -42,10 +42,10 @@ export const Search = () => {
 
 
   return (
-    <div className="gui-search">
-      <div className="container">
+    <div className="search-page">
+      <div className="search-page-container">
         <img src={Logo} alt="logo" />
-        <form onSubmit={formContext.handleSubmit} className="form">
+        <form onSubmit={formContext.handleSubmit} className="search-page-form">
           <UIKIT.InputText
             name="term"
             placeholder="Search for a user"
@@ -55,7 +55,7 @@ export const Search = () => {
             errorMessage={formContext.errors.term}
           />
           <div>
-            <UIKIT.Button type="submit" className="button" size="medium" label="search" />
+            <UIKIT.Button type="submit" className="search-page-button" size="medium" label="search" />
           </div>
         </form>
         <Link to={Routes.Users.PROFILE_HISTORY}>History</Link>

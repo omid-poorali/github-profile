@@ -28,10 +28,10 @@ export const History = () => {
     }
 
     return (
-        <div className="gui-history">
-            <ul className="list">
+        <div className="history-page">
+            <ul className="history-page-list">
                 {React.Children.toArray(history.map((item: Models.History) => (
-                    <li className="list-item" onClick={() => handleOnItemClick(item)}>
+                    <li className="history-page-list-item" onClick={() => handleOnItemClick(item)}>
                         {item.term}
                     </li>
                 )))}

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
 $nunito-font: 'Nunito', sans-serif;
 
 // mixins
@@ -25,7 +24,7 @@ $nunito-font: 'Nunito', sans-serif;
     }
 }
 
-.gui-404 {
+.not-found-page {
 
     width: 100%;
     min-height: 100vh;
@@ -33,7 +32,7 @@ $nunito-font: 'Nunito', sans-serif;
     background-attachment: fixed;
     overflow: hidden;
 
-    .mars {
+    &-mars {
         left: 0;
         right: 0;
         bottom: 0;
@@ -43,7 +42,7 @@ $nunito-font: 'Nunito', sans-serif;
         background-size: cover;
     }
 
-    .logo {
+    &-logo {
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -57,13 +56,13 @@ $nunito-font: 'Nunito', sans-serif;
         }
     }
 
-    .meteor {
+    &-meteor {
         position: absolute;
         right: 2vmin;
         top: 16vmin;
     }
 
-    .title {
+    &-title {
         color: white;
         font-family: $nunito-font;
         font-weight: 600;
@@ -76,7 +75,7 @@ $nunito-font: 'Nunito', sans-serif;
         }
     }
 
-    .subtitle {
+    &-subtitle {
         color: white;
         font-family: $nunito-font;
         font-weight: 400;
@@ -87,7 +86,7 @@ $nunito-font: 'Nunito', sans-serif;
     }
 
 
-    .astronaut {
+    &-astronaut {
         position: absolute;
         top: 18vmin;
         left: 10vmin;
@@ -99,7 +98,7 @@ $nunito-font: 'Nunito', sans-serif;
         }
     }
 
-    .spaceship {
+    &-spaceship {
         position: absolute;
         bottom: 15vmin;
         right: 24vmin;
