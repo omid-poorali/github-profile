@@ -6,7 +6,7 @@ export const getUserInfo = (username: string): Promise<Models.User> => {
             id: 0,
             login: username,
             avatar_url: "/avatar.png",
-            name: "name",
+            name: "user_name",
             location: "location",
             email: "email",
             hireable: false,
@@ -23,7 +23,7 @@ export const getUserRepos = (username: string): Promise<Models.Repository[]> => 
         resolve([
             {
                 id: 0,
-                name: "name",
+                name: "repository_name",
                 full_name: "full_name",
                 description: "description",
                 url: "url",

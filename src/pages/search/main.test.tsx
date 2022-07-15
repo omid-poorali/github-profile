@@ -25,10 +25,10 @@ describe("search page tests", () => {
 
     it('should render properly', () => {
         customRender();
-        expect(screen.getByText(/search/i)).toBeInTheDocument();
+        expect(screen.getByRole("button")).toBeInTheDocument();
+        expect(screen.getByRole("textbox")).toBeInTheDocument();
         expect(screen.getByText(/history/i)).toBeInTheDocument();
         expect(screen.getByPlaceholderText(/Search for a user/i)).toBeInTheDocument();
-        expect(screen.getByRole("textbox")).toBeInTheDocument();
     });
 
     it("should shows the required error when search is empty", async () => {
