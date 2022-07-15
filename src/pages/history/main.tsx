@@ -2,6 +2,7 @@ import { useNavigate, generatePath } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import IndexedDB from "helpers/idb";
+import * as Utils from "utils";
 import * as Models from "models";
 import * as Names from "names";
 import * as Routes from "routes";
@@ -33,12 +34,17 @@ export const History = () => {
         item: "history-page-list-item"
     }
 
+    const sortedHistory = history.sort((a:Models.History, b:Models.History) => {
+        return b.searchedAt - a.searchedAt;
+    });
+
     return (
         <div className={classes.root}>
             <ul className={classes.list}>
-                {React.Children.toArray(history.map((item: Models.History) => (
+                {React.Children.toArray(sortedHistory.map((item: Models.History) => (
                     <li className={classes.item} onClick={() => handleOnItemClick(item)}>
-                        {item.term}
+                        <span>{item.term}</span>
+                        <span>{Utils.Date.getLocaleString(item.searchedAt)}</span>
                     </li>
                 )))}
             </ul>
