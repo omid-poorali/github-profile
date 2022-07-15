@@ -9,7 +9,7 @@ describe("Avatar component tests", () => {
         expect(screen.queryByText(testMessage)).toBeNull()
     });
 
-    it("should have my- in classname", () => {
+    it("should have my-class in classname", () => {
         const className = 'my-class';
         render(<Avatar data-testid="avatar" className={className} />)
         expect(screen.getByTestId("avatar").classList.contains(className)).toBe(true)

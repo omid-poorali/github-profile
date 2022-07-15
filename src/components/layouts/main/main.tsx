@@ -1,14 +1,27 @@
+import React from "react";
+import classnames from "classnames";
 import { Header } from "./header";
 
-interface propsType {
+type PropsType = {
     children?: React.ReactNode;
-}
+    className?: string;
+} & React.ComponentPropsWithoutRef<"div">;
 
-export const Main = ({ children }: propsType) => {
+export const Main = React.forwardRef((props: PropsType, forwardedRef: React.Ref<HTMLDivElement>) => {
+
+    const {
+        children,
+        className,
+        ...rest
+    } = props;
+
+    const mainClassName = classnames("gui-main-layout", className);
+
     return (
-        <div className="gui-main-layout">
+        <div ref={forwardedRef} className={mainClassName} {...rest}>
             <Header />
             {children}
         </div>
-    );
-}
+    )
+
+});
