@@ -1,4 +1,4 @@
-import { render, screen, act, fireEvent } from "@testing-library/react";
+import { render, screen, act, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { InputText } from "./main";
 import { createRef } from "react";
@@ -88,7 +88,7 @@ describe("input-text component tests", () => {
         expect(handleBlur.mock.calls.length).toBe(1);
     });
 
-    it("should fire the onClick prop", () => {
+    it("should fire the onClick prop", async () => {
         const handleClick = jest.fn();
         const handleFocus = jest.fn();
 
@@ -100,6 +100,8 @@ describe("input-text component tests", () => {
         );
 
         userEvent.click(screen.getByTestId("input-wrapper"));
+        await waitFor(() => expect(handleClick.mock.calls.length).toBe(1));
+        await waitFor(() => expect(handleFocus.mock.calls.length).toBe(1));
 
         expect(handleClick.mock.calls.length).toBe(1);
         expect(handleFocus.mock.calls.length).toBe(1);

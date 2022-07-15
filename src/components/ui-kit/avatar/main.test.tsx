@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import UserEvent from "@testing-library/user-event";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Avatar } from "./main";
 
 describe("Avatar component tests", () => {
@@ -9,7 +9,7 @@ describe("Avatar component tests", () => {
         expect(screen.queryByText(testMessage)).toBeNull()
     });
 
-    it("should have my-class in classname", () => {
+    it("should have my- in classname", () => {
         const className = 'my-class';
         render(<Avatar data-testid="avatar" className={className} />)
         expect(screen.getByTestId("avatar").classList.contains(className)).toBe(true)
@@ -41,10 +41,11 @@ describe("Avatar component tests", () => {
     });
 
 
-    it("should have onClick property", () => {
+    it("should have onClick property", async () => {
         const onClick = jest.fn();
-        render(<Avatar data-testid="avatar" onClick={onClick} />)
-        UserEvent.click(screen.getByTestId("avatar"));
+        render(<Avatar data-testid="avatar" onClick={onClick} />);
+        userEvent.click(screen.getByTestId("avatar"));
+        await waitFor(() => expect(onClick).toHaveBeenCalled());
         expect(onClick).toHaveBeenCalled();
     });
 

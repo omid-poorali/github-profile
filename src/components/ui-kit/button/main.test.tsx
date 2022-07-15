@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import UserEvent from "@testing-library/user-event";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Button } from "./main";
 
 describe("Button component tests", () => {
@@ -64,10 +64,11 @@ describe("Button component tests", () => {
         expect(screen.getByTestId("button").style.color).toBe(style.color)
     });
 
-    it("should have onClick property", () => {
+    it("should have onClick property", async () => {
         const onClick = jest.fn();
         render(<Button data-testid="button" onClick={onClick} />)
-        UserEvent.click(screen.getByTestId("button"));
+        userEvent.click(screen.getByTestId("button"));
+        await waitFor (() => expect(onClick).toHaveBeenCalled());
         expect(onClick).toHaveBeenCalled();
     });
 

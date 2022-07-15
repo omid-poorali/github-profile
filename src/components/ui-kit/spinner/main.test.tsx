@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import UserEvent from "@testing-library/user-event";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Spinner } from "./main";
 
 describe("Spinner component tests", () => {
@@ -61,10 +61,11 @@ describe("Spinner component tests", () => {
         expect(screen.getByTestId("spinner").style.color).toBe(style.color)
     });
 
-    it("should have onClick property", () => {
+    it("should have onClick property", async () => {
         const onClick = jest.fn();
         render(<Spinner data-testid="spinner" onClick={onClick} />)
-        UserEvent.click(screen.getByTestId("spinner"));
+        userEvent.click(screen.getByTestId("spinner"));
+        await waitFor(() => expect(onClick).toHaveBeenCalled());
         expect(onClick).toHaveBeenCalled();
     });
 
