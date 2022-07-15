@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { UIKIT } from "components";
 import { useParams } from "react-router-dom";
-import * as APIs from "apis";
 import Skeleton from "react-loading-skeleton";
-
+import * as APIs from "apis";
+import * as Models from "models";
 
 export const Profile = () => {
 
-    const [loading, setLoading] = useState(true);
-    const [profile, setProfile] = useState<any>({});
-    const [repositories, setRepositories] = useState<any>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [profile, setProfile] = useState<Models.User>();
+    const [repositories, setRepositories] = useState<Models.Repository[]>([]);
     const params = useParams();
 
     useEffect(() => {
@@ -36,8 +36,8 @@ export const Profile = () => {
                 <div>
                     {loading ? <Skeleton width="10vw" count={3} /> : (
                         <h1>
-                            <div className="title">{profile.name}</div>
-                            <div className="subtitle">{profile.login}</div>
+                            <div className="title">{profile?.name}</div>
+                            <div className="subtitle">{profile?.login}</div>
                         </h1>
                     )}
                 </div>
@@ -46,7 +46,7 @@ export const Profile = () => {
                 <div className="list">
                     {loading ? <Skeleton className="list-item" count={3} /> : (
                         <>
-                            {React.Children.toArray(repositories.map((repository: any) => {
+                            {React.Children.toArray(repositories.map((repository: Models.Repository) => {
                                 return (
                                     <div className="list-item">
                                         <div className="name">{repository.name}</div>
