@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { generatePath, MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Search } from './main';
 import * as ModuleRoutes from 'routes';
 
@@ -58,7 +58,7 @@ describe("search page tests", () => {
         userEvent.type(searchBox, "test");
         await waitFor(() => expect(searchBox).toHaveAttribute("value", "test"));
         userEvent.click(screen.getByRole("button"));
-        await waitFor(() => expect(screen.getByTestId('location-display')).toHaveTextContent("test"));
+        await waitFor(() => expect(screen.getByTestId('location-display')).toHaveTextContent(generatePath(ModuleRoutes.Users.PROFILE, { username: "test" })));
         expect(screen.getByTestId('location-display')).toHaveTextContent("test");
     });
 })
