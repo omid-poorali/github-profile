@@ -4,7 +4,13 @@ import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Search } from './main';
 import * as ModuleRoutes from 'routes';
 
-jest.mock('helpers');
+jest.mock('helpers/idb', () => {
+    return function () {
+        return {
+            putValue: jest.fn()
+        };
+    };
+});
 
 const LocationDisplay = () => {
     const location = useLocation();

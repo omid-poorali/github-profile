@@ -1,7 +1,7 @@
 import { useNavigate, generatePath } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
-import { IndexedDb } from "helpers";
+import getIndexedDB from "helpers/idb";
 import * as Models from "models";
 import * as Names from "names";
 import * as Routes from "routes";
@@ -13,8 +13,7 @@ export const History = () => {
 
     useEffect(() => {
         const runIndexDb = async () => {
-            const indexedDb = new IndexedDb(Names.DBs.history);
-            await indexedDb.createObjectStore([Names.Stores.searchedTerms]);
+            const indexedDb = getIndexedDB(Names.DBs.history,[Names.Stores.searchedTerms]);
             indexedDb.getAllValue(Names.Stores.searchedTerms).then(history => {
                 setHistory(()=>history);
             }).catch(() => {

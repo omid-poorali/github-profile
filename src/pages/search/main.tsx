@@ -1,7 +1,7 @@
-import { Link, useNavigate,generatePath } from "react-router-dom";
+import { Link, useNavigate, generatePath } from "react-router-dom";
 import { useFormik } from "formik";
 import { UIKIT } from "components";
-import { IndexedDb } from "helpers";
+import getIndexedDB from "helpers/idb";
 import Logo from "assets/logo.svg";
 import * as Model from "models";
 import * as Names from "names";
@@ -36,9 +36,8 @@ export const Search = () => {
   });
 
   const addToHistory = async (history: Model.History) => {
-    const indexedDb = new IndexedDb(Names.DBs.history);
-    await indexedDb.createObjectStore([Names.Stores.searchedTerms]);
-    await indexedDb.putValue(Names.Stores.searchedTerms, history);
+    const indexedDB = getIndexedDB(Names.DBs.history, [Names.Stores.searchedTerms]);
+    await indexedDB.putValue(Names.Stores.searchedTerms, history);
   }
 
 

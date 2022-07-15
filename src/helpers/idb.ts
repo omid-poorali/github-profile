@@ -1,66 +1,70 @@
 import { IDBPDatabase, openDB } from 'idb';
 
-export class IndexedDb {
-    private database: string;
-    private db: any;
+let database: IDBPDatabase;
 
-    constructor(database: string) {
-        this.database = database;
-    }
+function getIndexedDB(dbName: string, tableNames: string[]) {
 
-    public async createObjectStore(tableNames: string[]) {
-        try {
-            this.db = await openDB(this.database, 1, {
-                upgrade(db: IDBPDatabase) {
-                    for (const tableName of tableNames) {
-                        if (db.objectStoreNames.contains(tableName)) {
-                            continue;
-                        }
-                        db.createObjectStore(tableName, { autoIncrement: true, keyPath: 'id' });
-                    }
-                },
-            });
-        } catch (error) {
-            return false;
+    const connectDB = async () => {
+
+        if (database) {
+            return database;
         }
+
+        database = await openDB(dbName, 1, {
+            upgrade(db: IDBPDatabase) {
+                for (const tableName of tableNames) {
+                    if (db.objectStoreNames.contains(tableName)) {
+                        continue;
+                    }
+                    db.createObjectStore(tableName, { autoIncrement: true, keyPath: 'id' });
+                }
+            },
+        })
+
+        return database;
     }
 
-    public async getValue(tableName: string, id: number) {
-        const tx = this.db.transaction(tableName, 'readonly');
+    const getValue = async (tableName: string, id: number) => {
+        const db = await connectDB();
+        const tx = db.transaction(tableName, 'readonly');
         const store = tx.objectStore(tableName);
         const result = await store.get(id);
         console.log('Get Data ', JSON.stringify(result));
         return result;
     }
 
-    public async getAllValue(tableName: string) {
-        const tx = this.db.transaction(tableName, 'readonly');
+    const getAllValue = async (tableName: string) => {
+        const db = await connectDB();
+        const tx = db.transaction(tableName, 'readonly');
         const store = tx.objectStore(tableName);
         const result = await store.getAll();
         console.log('Get All Data', JSON.stringify(result));
         return result;
     }
 
-    public async putValue(tableName: string, value: object) {
-        const tx = this.db.transaction(tableName, 'readwrite');
+    const putValue = async (tableName: string, value: object) => {
+        const db = await connectDB();
+        const tx = db.transaction(tableName, 'readwrite');
         const store = tx.objectStore(tableName);
         const result = await store.put(value);
         console.log('Put Data ', JSON.stringify(result));
         return result;
     }
 
-    public async putBulkValue(tableName: string, values: object[]) {
-        const tx = this.db.transaction(tableName, 'readwrite');
+    const putBulkValue = async (tableName: string, values: object[]) => {
+        const db = await connectDB();
+        const tx = db.transaction(tableName, 'readwrite');
         const store = tx.objectStore(tableName);
         for (const value of values) {
             const result = await store.put(value);
             console.log('Put Bulk Data ', JSON.stringify(result));
         }
-        return this.getAllValue(tableName);
+        return getAllValue(tableName);
     }
 
-    public async deleteValue(tableName: string, id: number) {
-        const tx = this.db.transaction(tableName, 'readwrite');
+    const deleteValue = async (tableName: string, id: number) => {
+        const db = await connectDB();
+        const tx = db.transaction(tableName, 'readwrite');
         const store = tx.objectStore(tableName);
         const result = await store.get(id);
         if (!result) {
@@ -71,4 +75,14 @@ export class IndexedDb {
         console.log('Deleted Data', id);
         return id;
     }
+
+    return {
+        getValue,
+        getAllValue,
+        putValue,
+        putBulkValue,
+        deleteValue
+    }
 }
+
+export default getIndexedDB;
