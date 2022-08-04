@@ -8,7 +8,7 @@
   justify-content: center;
   flex-direction: column;
 
-  &-error-fallback-title {
+  &-title {
     max-width: 529px;
     font-family: Roboto;
     font-size: 38px;
@@ -22,7 +22,7 @@
     margin-bottom: 16px;
   }
 
-  &-error-fallback-subtitle {
+  &-subtitle {
     max-width: 568px;
     font-family: Roboto;
     font-size: 16px;
@@ -40,49 +40,49 @@
     margin-bottom: 16px;
   }
 
-  &-error-fallback-pao-atras {
+  &-pao-atras {
     animation: leftright 1s alternate infinite;
     transform-origin: center;
   }
 
-  &-error-fallback-pao-frente {
+  &-pao-frente {
     animation: leftright 1s 0.3s alternate infinite;
     transform-origin: center;
   }
 
-  &-error-fallback-olho-esq {
+  &-olho-esq {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-error-fallback-olho-dir {
+  &-olho-dir {
 
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-error-fallback-boca {
+  &-boca {
     animation: sad 2s alternate infinite;
     transform-origin: center;
   }
 
-  &-error-fallback-raios {
+  &-raios {
     -webkit-animation: flicker-4 4s linear infinite both;
     animation: flicker-4 4s linear infinite both;
   }
 
-  &-error-fallback-tomada {
+  &-tomada {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  &-error-fallback-fio-500 {
+  &-fio-500 {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }
 
-  &-error-fallback-fio {
+  &-fio {
     -webkit-animation: vibrate-1 3s linear infinite both;
     animation: vibrate-1 3s linear infinite both;
   }

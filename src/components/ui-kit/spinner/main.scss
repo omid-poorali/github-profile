@@ -1,17 +1,17 @@
 .gui-spinner {
 
   &--circle {
-    border-top: 3px solid transparent;
+    border: 3px solid transparent;
     border-radius: 50%;
     animation: spin 0.5s linear 0s infinite;
   }
 
   &--primary-circle {
-    border: 3px solid var(--color-primary);
+    border-top: 3px solid var(--color-primary);
   }
 
   &--secondary-circle {
-    border: 3px solid var(--color-secondary);
+    border-top: 3px solid var(--color-secondary);
   }
 
   &--small {
